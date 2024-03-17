@@ -1,0 +1,14 @@
+:root{
+    --basic-backgoround:#070F2B;
+    --basic-element:#1B1A55;
+    --basic-decoration:#535C91;
+    --basic-text:#9290C3;
+}
+
+.basic__container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}

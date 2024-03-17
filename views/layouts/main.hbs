@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+        :root {
+            --basic-background: #070F2B;
+            --basic-element: #1B1A55;
+            --basic-decoration: #535C91;
+            --basic-text: #9290C3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        input {
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            margin-top: 1rem;
+            border-radius: 25px;
+            background-color: var(--basic-decoration);
+            border: none;
+        }
+
+        input:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        button {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            margin-top: 1rem;
+            border-radius: 25px;
+            background-color: var(--basic-background);
+            color: var(--basic-text);
+            border: none;
+        }
+
+        button:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        a {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            border-radius: 25px;
+            color: var(--basic-text);
+            border: none;
+            text-decoration: none;
+        }
+
+        a:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .principal__font{
+            font-family: "Pixelify Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+
+        .basic__container {
+            background: linear-gradient(to right, var(--basic-background), var(--basic-element));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .basic__element {
+            background-color: var(--basic-element);
+            color: var(--basic-text);
+            border-style: solid;
+            border-color: var(--basic-decoration);
+            border-width: 1px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{{ body }}}
+
+</body>
+
+</html>

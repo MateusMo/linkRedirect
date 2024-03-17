@@ -1,3 +1,4 @@
+
 const post = async(req,res)=>{
     const {nickName,password} = req.body;
     try {
@@ -7,5 +8,7 @@ const post = async(req,res)=>{
         res.status(500).json({ error: 'Internal server error' });
     }
 }
+
+
 
 module.exports = { post };

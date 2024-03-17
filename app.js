@@ -1,17 +1,34 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const registerRouter = require('./routes/registerRouter')
-const loginRouter = require('./routes/loginRouter')
-
+const registerRouter = require('./routes/registerRouter');
+const loginRouter = require('./routes/loginRouter');
+const handlebars = require('express-handlebars');
 const app = express();
-const port = 4000;
+const port = 3000;
 
-//declaração de pacotes de dependência
-app.use(bodyParser.json());
+app.set('view engine', 'hbs');
+app.engine('hbs', handlebars.engine({
+    layoutsDir: __dirname + '/views/layouts',
+    extname: 'hbs',
+    defaultLayout: 'main',
+}));
+app.use(express.static('public'));
 
-//declaração de rotas
-app.use('/register',registerRouter);
-app.use('/login',loginRouter);
+app.get('/', (req, res) => {
+    res.render('login')
+});
+app.get('/registro', (req, res) => {
+    res.render('registro')
+});
 
-app.listen(port);
+// Declaração de rotas
+//utilizar essas rotas no futuro
+//com o handlebars
+app.use('/register', registerRouter);
+app.use('/login', loginRouter);
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+
 
