@@ -2,6 +2,7 @@ const express = require('express');
 const registerRouter = require('./routes/registerRouter');
 const loginRouter = require('./routes/loginRouter');
 const handlebars = require('express-handlebars');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
@@ -11,6 +12,7 @@ app.engine('hbs', handlebars.engine({
     extname: 'hbs',
     defaultLayout: 'main',
 }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 // Declaração de rotas
 //utilizar essas rotas no futuro

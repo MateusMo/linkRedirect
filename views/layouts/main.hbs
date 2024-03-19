@@ -14,6 +14,7 @@
             --basic-element: #1B1A55;
             --basic-decoration: #535C91;
             --basic-text: #9290C3;
+            --basic-success:#90ee90;
         }
 
         * {
@@ -111,14 +112,18 @@
             padding-right: 2rem;
             padding-left: 2rem;
         }
+
+        .basic__message{
+            color: var(--basic-success);
+        }
     </style>
 
 </head>
 
 <body>
-
+    {{!-- {{> header}} --}}
     {{{ body }}}
-
+    {{!-- {{> footer}} --}}
 </body>
 
 </html>
