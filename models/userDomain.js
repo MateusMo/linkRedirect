@@ -24,7 +24,13 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.DATE
         }
-    }, {});
+    }, {
+        tableName: 'Users'
+    });
+
+    User.associate = (models) => {
+        User.hasMany(models.Label, { foreignKey: 'userId'});
+    };
 
     return User;
 };
