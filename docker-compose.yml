@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: MYSQL_CONTAINER
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: teste
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_USER: ADMIN
+      MYSQL_PASSWORD: ADMIN
+      MYSQL_DATABASE: linkRedirect
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
