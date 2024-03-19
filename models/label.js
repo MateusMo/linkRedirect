@@ -1,18 +1,21 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
+
+    const Label = sequelize.define('Label', {
         id: {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-        nickName: {
-            type: DataTypes.STRING,
+        userId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            foreignKey: true,
+            references: { model: 'Users', key: 'id' },
         },
-        password: {
+        label: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -25,12 +28,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE
         }
     }, {
-        tableName: 'Users'
+        tableName: 'Labels'
     });
 
-    User.associate = (models) => {
-        User.hasMany(models.Label, { foreignKey: 'userId'});
+    Label.associate = (models) => {
+        Label.belongsTo(models.User, { foreignKey: 'userId' });
+        Label.hasOne(models.Destination, { foreignKey: 'labelId'});
     };
 
-    return User;
+    return Label;
 };
