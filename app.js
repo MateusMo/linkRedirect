@@ -6,17 +6,18 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+//Configuração Handlebars
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars.engine({
     layoutsDir: __dirname + '/views/layouts',
     extname: 'hbs',
     defaultLayout: 'main',
 }));
+//Configuração bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
+//Configuração css publico
 app.use(express.static('public'));
-// Declaração de rotas
-//utilizar essas rotas no futuro
-//com o handlebars
+//rotas
 app.use('/registro', registerRouter);
 app.use('/', loginRouter);
 

@@ -1,10 +1,10 @@
 <div class="basic__container">
-    <div class="basic__element principal__font">
+    <form action="/login" method="POST" class="basic__element principal__font">
         <h1>Bem vindo ao link brabo</h1>
-        <input class="principal__font" type="text" placeholder="nickname">
-        <input class="principal__font" type="password" placeholder="password">
-        <button class="principal__font">LOGIN</button>
+        <input class="principal__font" name="nickname" type="text" placeholder="nickname">
+        <input class="principal__font" name="password" type="password" placeholder="password">
+        <button class="principal__font" type="submit">LOGIN</button>
         {{> statusRegistro}}
         <a href="./registro">Criar token de acesso</a>
-    </div>
+    </form>
 </div>
