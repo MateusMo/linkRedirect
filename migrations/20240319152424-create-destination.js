@@ -12,18 +12,29 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       labelId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+        field: 'label_id',
+        references: {
+          model: 'Labels',
+          key: 'id'
+        }
       },
       link: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        field: 'created_at',
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        field: 'updated_at',
       }
     });
   },

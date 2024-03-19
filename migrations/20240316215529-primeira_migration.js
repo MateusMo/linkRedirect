@@ -12,18 +12,21 @@ module.exports = {
       nickName: {
         type: Sequelize.STRING,
         allowNull: false,
+        field: 'nick_name',
       },
       password: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        field: 'created_at',
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        field: 'updated_at',
       }
     });
   },

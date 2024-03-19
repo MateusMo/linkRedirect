@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     labelId: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        foreignKey: true,
         references: { model: 'Labels', key: 'id' },
     },
     link: {

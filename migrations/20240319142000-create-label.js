@@ -18,7 +18,7 @@ module.exports = {
         onDelete: 'CASCADE',
         field: 'user_id',
         references: {
-          model: 'users',
+          model: 'Users',
           key: 'id'
         }
       },
@@ -29,10 +29,12 @@ module.exports = {
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
+        field: 'created_at',
       },
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
+        field: 'updated_at',
       }
     });
   },
