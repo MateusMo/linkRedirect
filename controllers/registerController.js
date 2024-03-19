@@ -20,4 +20,8 @@ const post = async (req, res) => {
   }
 };
 
-module.exports = { post };
+const get = async (req, res) => {
+  res.render('registro')
+}
+
+module.exports = { post, get };

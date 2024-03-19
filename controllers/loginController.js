@@ -9,6 +9,10 @@ const post = async(req,res)=>{
     }
 }
 
+const get = async(req,res)=>{
+    res.render('login')
+}
 
 
-module.exports = { post };
+
+module.exports = { post, get };

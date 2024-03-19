@@ -12,19 +12,11 @@ app.engine('hbs', handlebars.engine({
     defaultLayout: 'main',
 }));
 app.use(express.static('public'));
-
-app.get('/', (req, res) => {
-    res.render('login')
-});
-app.get('/registro', (req, res) => {
-    res.render('registro')
-});
-
 // Declaração de rotas
 //utilizar essas rotas no futuro
 //com o handlebars
-app.use('/register', registerRouter);
-app.use('/login', loginRouter);
+app.use('/registro', registerRouter);
+app.use('/', loginRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
