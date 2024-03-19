@@ -22,7 +22,7 @@ app.use('/registro', registerRouter);
 app.use('/', loginRouter);
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port http://localhost:${port}`);
 });
 
 
