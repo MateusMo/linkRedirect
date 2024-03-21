@@ -13,12 +13,14 @@ const post = async (req, res) => {
         if (user) {
             const passwordMatch = await bcrypt.compare(password, user.password);
             if (passwordMatch) {
-                return res.status(200).render('home');
+                //salva usuário na sessão
+                req.session.user = user.dataValues;
+                return res.status(200).render('home',  { user: req.session.user });
             } else {
-                return res.status(401).render('login', { message: 'Senha incorreta' });
+                return res.status(401).render('login', { errorMessage: 'Senha incorreta' });
             }
         } else {
-            return res.status(401).render('login', { message: 'Usuário não encontrado' });
+            return res.status(401).render('login', { errorMessage: 'Usuário não encontrado' });
         }
     } catch (error) {
         console.error(error);

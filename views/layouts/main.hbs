@@ -15,6 +15,7 @@
             --basic-decoration: #535C91;
             --basic-text: #9290C3;
             --basic-success:#90ee90;
+            --basic-error:##FF3131;
         }
 
         * {
@@ -113,8 +114,30 @@
             padding-left: 2rem;
         }
 
-        .basic__message{
+        .basic__element_big{
+            height: 80vh;
+            width: 80%;
+            background-color: var(--basic-element);
+            color: var(--basic-text);
+            border-style: solid;
+            border-color: var(--basic-decoration);
+            border-width: 1px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+
+        .basic__message_success{
             color: var(--basic-success);
+        }
+        
+        .basic__message_error{
+            color: var(--basic-error);
         }
     </style>
 
