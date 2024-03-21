@@ -12,7 +12,7 @@ const post = async (req, res) => {
       password: hashedPassword 
     });
 
-    res.status(201).render('login', { message: 'Token criado com sucesso' });
+    res.status(201).render('login', { successMessage: 'Token criado com sucesso' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal server error' });

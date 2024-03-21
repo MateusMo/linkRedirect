@@ -3,6 +3,7 @@ const registerRouter = require('./routes/registerRouter');
 const loginRouter = require('./routes/loginRouter');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const app = express();
 const port = 3000;
 
@@ -13,6 +14,14 @@ app.engine('hbs', handlebars.engine({
     extname: 'hbs',
     defaultLayout: 'main',
 }));
+//Configuração de sessão
+//isso salva o usuário logado na sessão
+//e distribui ele pelo sistema quando precisar
+app.use(session({
+    secret: 'secreto', // Chave secreta para assinar a sessão
+    resave: false,
+    saveUninitialized: true
+  }));
 //Configuração bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 //Configuração css publico
