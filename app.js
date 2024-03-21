@@ -17,6 +17,8 @@ app.engine('hbs', handlebars.engine({
 //Configuração de sessão
 //isso salva o usuário logado na sessão
 //e distribui ele pelo sistema quando precisar
+//exemplo de como salvar usuário e recuperar em
+//login controller POST
 app.use(session({
     secret: 'secreto', // Chave secreta para assinar a sessão
     resave: false,
