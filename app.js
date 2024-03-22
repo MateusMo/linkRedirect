@@ -1,6 +1,7 @@
 const express = require('express');
 const registerRouter = require('./routes/registerRouter');
 const loginRouter = require('./routes/loginRouter');
+const homeRouter = require('./routes/homeRouter');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -28,11 +29,15 @@ app.use(session({
     resave: false,
     saveUninitialized: true
   }));
-//Configuração bodyParser
+
+  //Configuração bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
+
 //Configuração css publico
 app.use(express.static('public'));
+
 //rotas
+app.use('/home', homeRouter)
 app.use('/registro', registerRouter);
 app.use('/', loginRouter);
 

@@ -1,0 +1,13 @@
+<div class="basic__container">
+    <form action="/home/label" method="POST" class="basic__element principal__font">
+    {{#if successMessage}}
+        {{> successMessage}}
+    {{else}}
+        <h2 class="principal__font">Registrar novo Link</h2>
+        <input class="principal__font" name="labelName" type="text" placeholder="Label Name">
+        <input class="principal__font" name="link" type="text" placeholder="Destination">
+        <button class="principal__font" class="principal__font" type="submit">CRIAR</button>
+    {{/if}}
+        <a href="/home">Voltar</a>
+    </form>
+</div>

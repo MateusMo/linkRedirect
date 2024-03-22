@@ -2,11 +2,67 @@
     <div class="basic__element_big">
         <div class="left">
             Welcome: {{user.nickName}}
+            <br>
+            <br>
             Desenvolver perfil
         </div>
+        <br>
+        <br>
         <div class="right">
-            desenvolver botão de cadastro de novo link
-            desenvolver listagem de links, em cada linha deve ter botão para atualizar ou deletar um link
+            <a href="/home/label">Registrar novo Link</a>
+            <br>
+            <br>
+            {{#if labels}}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Label</th>
+                            <th>link</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each labels}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{label}}</td>
+                                <td>{{destination.link}}</td>
+                                {{!-- destination.link não está funcionando --}}
+                                <td>
+                                    <span onclick="editLabel('{{id}}')" class="table__button">Editar</span>
+                                </td>
+                                <td>                                
+                                    <span onclick="deleteLabel('{{id}}')" class="table__button">Apagar</span>
+                                </td>
+                             </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{else}}
+                <p>Não há labels para exibir.</p>
+            {{/if}}
         </div>
     </div>
 </div>
+
+<script>
+async function deleteLabel(id) {
+    await fetch(`/label/delete/${id}`, {
+    //implementar rota delete 
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.reload();
+        }
+    })
+    .catch(error => console.error('Erro ao apagar label:', error));
+}
+
+function editLabel(id) {
+    window.location.href = `/label/edit/${id}`;
+    //implementar rota edit 
+}
+</script>
