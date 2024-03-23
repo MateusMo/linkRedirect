@@ -7,15 +7,16 @@
             Desenvolver perfil
             <br>
             <br>
-            <a href="/logout" class="table__button" >Desconectar</a>
+            <a href="/logout" class="table__button">Desconectar</a>
         </div>
         <br>
         <br>
         <div class="right">
-            <a href="/home/label" class="table__button" >Registrar novo Link</a>
+            <a href="/home/label" class="table__button">Registrar novo Link</a>
             <br>
             <br>
             {{#if labels}}
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -27,44 +28,45 @@
                     </thead>
                     <tbody>
                         {{#each labels}}
-                            <tr>
-                                <td>{{label}}</td>
-                                <td>{{destination.link}}</td>
-                                {{!-- destination.link não está funcionando --}}
-                                <td>
-                                    <span onclick="editLabel('{{id}}')" class="table__button">Editar</span>
-                                </td>
-                                <td>                                
-                                    <span onclick="deleteLabel('{{id}}')" class="table__button">Apagar</span>
-                                </td>
-                             </tr>
+                        <tr>
+                            <td>{{label}}</td>
+                            <td>{{destination.link}}</td>
+                            {{!-- destination.link não está funcionando --}}
+                            <td>
+                                <span onclick="editLabel('{{id}}')" class="table__button">Editar</span>
+                            </td>
+                            <td>
+                                <span onclick="deleteLabel('{{id}}')" class="table__button">Apagar</span>
+                            </td>
+                        </tr>
                         {{/each}}
                     </tbody>
                 </table>
+            </div>
             {{else}}
-                <p>Não há labels para exibir.</p>
+            <p>Não há labels para exibir.</p>
             {{/if}}
         </div>
     </div>
 </div>
 
 <script>
-async function deleteLabel(id) {
-    await fetch(`/label/delete/${id}`, {
-    //implementar rota delete 
-        method: 'DELETE',
-    })
-    .then(response => {
-        if (response.ok) {
-            window.location.reload();
-        }
-    })
-    .catch(error => console.error('Erro ao apagar label:', error));
-}
+    async function deleteLabel(id) {
+        await fetch(`/label/delete/${id}`, {
+            //implementar rota delete 
+            method: 'DELETE',
+        })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                }
+            })
+            .catch(error => console.error('Erro ao apagar label:', error));
+    }
 
-function editLabel(id) {
-    window.location.href = `/label/edit/${id}`;
-    //implementar rota edit 
-}
+    function editLabel(id) {
+        window.location.href = `/label/edit/${id}`;
+        //implementar rota edit 
+    }
 
 </script>
