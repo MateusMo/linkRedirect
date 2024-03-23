@@ -4,6 +4,7 @@ const loginRouter = require('./routes/loginRouter');
 const homeRouter = require('./routes/homeRouter');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
+const path = require('path');
 const session = require('express-session');
 const app = express();
 const port = 3000;
