@@ -24,7 +24,7 @@
             --basic-decoration: #535C91;
             --basic-text: #9290C3;
             --basic-success:#90ee90;
-            --basic-error:##FF3131;
+            --basic-error: #FF3131;
         }
 
         * {
@@ -154,6 +154,44 @@
         }
         .right{
             width: 80%;
+        }
+
+        /* Estilos gerais para a tabela */
+        table {
+          width: 80%; /* Faz a tabela ocupar a largura total do contêiner */
+          border-collapse: collapse; /* Remove o espaçamento entre as bordas das células */
+        }
+
+        /* Estiliza os cabeçalhos da tabela */
+        th {
+          background-color: var(--basic-background);
+          color: var(--basic-text); /* Cor do texto */
+          padding: 10px; /* Espaçamento interno */
+          text-align: center; /* Alinha o texto à esquerda */
+          border-bottom: 3px solid var(--basic-decoration); /* Adiciona uma borda abaixo do cabeçalho */
+        }
+
+        /* Estiliza as células da tabela */
+        td {
+          text-align: center;
+          height: 30px;
+          border-bottom: 1px solid var(--basic-background); /* Adiciona uma borda fina abaixo de cada célula */
+        }
+
+        /* Estiliza as linhas da tabela ao passar o mouse */
+        tr:hover {
+          background-color: var(--basic-text); /* Muda a cor de fundo da linha ao passar o mouse */
+          color: var(--basic-background);
+        }
+
+        .table__button {
+            color: var(--basic-success);
+            font-size: 80%;
+        }
+
+        .table__button:hover {
+          color: #ff618b;
+          cursor: pointer;
         }
 
     </style>
