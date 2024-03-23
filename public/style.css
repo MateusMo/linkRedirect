@@ -185,18 +185,16 @@ tr:hover {
     cursor: pointer;
 }
 
-/*
-            Responsividade geral Tablet
-        */
-@media only screen and (min-width: 868px) {}
-
-.basic__element {
-    width: 50%;
+/*Responsividade geral Tablet*/
+@media only screen and (min-width: 868px) {
+    .basic__element {
+        width: 50%;
+    }
 }
 
-/*
-            Responsividade geral Mobile
-        */
+
+
+/*Responsividade geral Mobile*/
 @media only screen and (max-width: 580px) {
     .basic__element {
         width: 80%;
