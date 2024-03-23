@@ -44,6 +44,11 @@ app.use('/registro', registerRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 
+//rota 404 padrão
+app.use((req, res, next) => {
+    res.render('404',{user: req.session});
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
