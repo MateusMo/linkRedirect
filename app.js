@@ -40,7 +40,7 @@ app.use(express.static('public'));
 //rotas
 app.use('/home', homeRouter)
 app.use('/registro', registerRouter);
-app.use('/', loginRouter);
+app.use('/login', loginRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

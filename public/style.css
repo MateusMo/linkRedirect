@@ -1,204 +1,205 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
-        :root {
-            --basic-background: #070F2B;
-            --basic-element: #1B1A55;
-            --basic-decoration: #535C91;
-            --basic-text: #9290C3;
-            --basic-success: #90ee90;
-            --basic-error: #FF3131;
-        }
+:root {
+    --basic-background: #070F2B;
+    --basic-element: #1B1A55;
+    --basic-decoration: #535C91;
+    --basic-text: #9290C3;
+    --basic-success: #90ee90;
+    --basic-error: #FF3131;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
+* {
+    margin: 0;
+    padding: 0;
+}
 
-        input {
-            width: 100%;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            margin-top: 1rem;
-            border-radius: 25px;
-            background-color: var(--basic-decoration);
-            color: var(--basic-background);
-            border: none;
-            font-size: 20px;
-        }
+input {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    background-color: var(--basic-decoration);
+    color: var(--basic-background);
+    border: none;
+    font-size: 20px;
+}
 
-        input:hover {
-            cursor: pointer;
-            opacity: 0.7;
-        }
+input:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
 
-        input::placeholder {
-            color: var(--basic-background);
-        }
+input::placeholder {
+    color: var(--basic-background);
+}
 
-        button {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            margin-top: 1rem;
-            border-radius: 25px;
-            background-color: var(--basic-background);
-            color: var(--basic-text);
-            border: none;
-            font-size: 20px;
-        }
+button {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    background-color: var(--basic-background);
+    color: var(--basic-text);
+    border: none;
+    font-size: 20px;
+}
 
-        button:hover {
-            cursor: pointer;
-            opacity: 0.7;
-        }
+button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
 
-        a {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-right: 1rem;
-            padding-left: 1rem;
-            border-radius: 25px;
-            color: var(--basic-text);
-            border: none;
-            text-decoration: none;
-            font-size: 20px;
-        }
+a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 25px;
+    color: var(--basic-text);
+    border: none;
+    text-decoration: none;
+    font-size: 20px;
+}
 
-        a:hover {
-            cursor: pointer;
-            opacity: 0.7;
-        }
+a:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
 
-        .principal__font {
-            font-family: "Pixelify Sans", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
+.principal__font {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
 
-        .basic__container {
-            background: linear-gradient(to right, var(--basic-background), var(--basic-element));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-        }
+.basic__container {
+    background: linear-gradient(to right, var(--basic-background), var(--basic-element));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
 
-        .basic__element {
-            background-color: var(--basic-element);
-            color: var(--basic-text);
-            border-style: solid;
-            border-color: var(--basic-decoration);
-            border-width: 1px;
-            border-radius: 25px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            padding-right: 2rem;
-            padding-left: 2rem;
-        }
+.basic__element {
+    background-color: var(--basic-element);
+    color: var(--basic-text);
+    border-style: solid;
+    border-color: var(--basic-decoration);
+    border-width: 1px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
 
-        .basic__element_big {
-            height: 80vh;
-            width: 80%;
-            background-color: var(--basic-element);
-            color: var(--basic-text);
-            border-style: solid;
-            border-color: var(--basic-decoration);
-            border-width: 1px;
-            border-radius: 25px;
-            display: flex;
-            justify-content: center;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            padding-right: 2rem;
-            padding-left: 2rem;
-        }
+.basic__element_big {
+    height: 80vh;
+    width: 80%;
+    background-color: var(--basic-element);
+    color: var(--basic-text);
+    border-style: solid;
+    border-color: var(--basic-decoration);
+    border-width: 1px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
 
-        .basic__message_success {
-            color: var(--basic-success);
-        }
+.basic__message_success {
+    color: var(--basic-success);
+}
 
-        .basic__message_error {
-            color: var(--basic-error);
-        }
+.basic__message_error {
+    color: var(--basic-error);
+}
 
-        /* Contexto home */
-        .left {
-            width: 20%;
-        }
+/* Contexto home */
+.left {
+    width: 20%;
+}
 
-        .right {
-            width: 80%;
-        }
+.right {
+    width: 80%;
+}
 
-        /* Estilos gerais para a tabela */
-        table {
-            width: 80%;
-            /* Faz a tabela ocupar a largura total do contêiner */
-            border-collapse: collapse;
-            /* Remove o espaçamento entre as bordas das células */
-        }
+/* Estilos gerais para a tabela */
+table {
+    width: 80%;
+    /* Faz a tabela ocupar a largura total do contêiner */
+    border-collapse: collapse;
+    /* Remove o espaçamento entre as bordas das células */
+}
 
-        /* Estiliza os cabeçalhos da tabela */
-        th {
-            background-color: var(--basic-background);
-            color: var(--basic-text);
-            /* Cor do texto */
-            padding: 10px;
-            /* Espaçamento interno */
-            text-align: center;
-            /* Alinha o texto à esquerda */
-            border-bottom: 3px solid var(--basic-decoration);
-            /* Adiciona uma borda abaixo do cabeçalho */
-        }
+/* Estiliza os cabeçalhos da tabela */
+th {
+    background-color: var(--basic-background);
+    color: var(--basic-text);
+    /* Cor do texto */
+    padding: 10px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Alinha o texto à esquerda */
+    border-bottom: 3px solid var(--basic-decoration);
+    /* Adiciona uma borda abaixo do cabeçalho */
+}
 
-        /* Estiliza as células da tabela */
-        td {
-            text-align: center;
-            height: 30px;
-            border-bottom: 1px solid var(--basic-background);
-            /* Adiciona uma borda fina abaixo de cada célula */
-        }
+/* Estiliza as células da tabela */
+td {
+    text-align: center;
+    height: 30px;
+    border-bottom: 1px solid var(--basic-background);
+    /* Adiciona uma borda fina abaixo de cada célula */
+}
 
-        /* Estiliza as linhas da tabela ao passar o mouse */
-        tr:hover {
-            background-color: var(--basic-text);
-            /* Muda a cor de fundo da linha ao passar o mouse */
-            color: var(--basic-background);
-        }
+/* Estiliza as linhas da tabela ao passar o mouse */
+tr:hover {
+    background-color: var(--basic-text);
+    /* Muda a cor de fundo da linha ao passar o mouse */
+    color: var(--basic-background);
+}
 
-        .table__button {
-            color: var(--basic-success);
-            font-size: 80%;
-        }
+.table__button {
+    color: var(--basic-success);
+    font-size: 80%;
+}
 
-        .table__button:hover {
-            color: #ff618b;
-            cursor: pointer;
-        }
+.table__button:hover {
+    color: #ff618b;
+    cursor: pointer;
+}
 
-        /*
+/*
             Responsividade geral Tablet
         */
-        @media only screen and (min-width: 868px) {}
-        .basic__element {
-            width: 50%;
-        }
+@media only screen and (min-width: 868px) {}
 
-        /*
+.basic__element {
+    width: 50%;
+}
+
+/*
             Responsividade geral Mobile
         */
-        @media only screen and (max-width: 580px) {
-            .basic__element {
-                width: 80%;
-                padding: 1rem;
-            }
-        }
+@media only screen and (max-width: 580px) {
+    .basic__element {
+        width: 80%;
+        padding: 1rem;
+    }
+}
