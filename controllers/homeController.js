@@ -5,7 +5,7 @@ const get = async (req, res) => {
 
     console.log(req.session.user)
     if (!req.session.user) {
-        return res.redirect('/');
+        return res.redirect('/login');
     }
 
     try {
