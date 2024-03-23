@@ -1,16 +1,18 @@
 'use strict'
 
-const { Label } = require("../models");
+const { Label, Destination } = require("../models");
 
 const post = async (req, res) => {
     const { id } = req.session.user;
-    const { labelName } = req.body;
-    console.log(req.session.user);
+    const { labelName, link } = req.body;
+    
+    if (!id) res.status(404).render('home');
 
     try {
-        if (!id) res.status(404).render('home');
-
-        await Label.create({ userId: id, label: labelName });
+        const { id: labelId } = await Label.
+            create({ userId: id, label: labelName });
+            
+        await Destination.create({ labelId, link });
 
         res.status(201).render('label',
             { successMessage: 'Label criada com sucesso' });
