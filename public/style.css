@@ -168,6 +168,14 @@ td {
     /* Adiciona uma borda fina abaixo de cada célula */
 }
 
+th:first-child {
+    border-radius: 15px 0px 0px 0px;
+}
+
+th:last-child {
+    border-radius: 0px 15px 0px 0px;
+}
+
 /* Estiliza as linhas da tabela ao passar o mouse */
 tr:hover {
     background-color: var(--basic-text);
