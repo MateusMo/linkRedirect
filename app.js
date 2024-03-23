@@ -1,6 +1,7 @@
 const express = require('express');
 const registerRouter = require('./routes/registerRouter');
 const loginRouter = require('./routes/loginRouter');
+const logoutRouter = require('./routes/logoutrouter');
 const homeRouter = require('./routes/homeRouter');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
@@ -41,6 +42,7 @@ app.use(express.static('public'));
 app.use('/home', homeRouter)
 app.use('/registro', registerRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

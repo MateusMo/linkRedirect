@@ -5,18 +5,20 @@
             <br>
             <br>
             Desenvolver perfil
+            <br>
+            <br>
+            <a href="/logout" class="table__button" >Desconectar</a>
         </div>
         <br>
         <br>
         <div class="right">
-            <a href="/home/label">Registrar novo Link</a>
+            <a href="/home/label" class="table__button" >Registrar novo Link</a>
             <br>
             <br>
             {{#if labels}}
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Label</th>
                             <th>link</th>
                             <th></th>
@@ -26,7 +28,6 @@
                     <tbody>
                         {{#each labels}}
                             <tr>
-                                <td>{{id}}</td>
                                 <td>{{label}}</td>
                                 <td>{{destination.link}}</td>
                                 {{!-- destination.link não está funcionando --}}
@@ -65,4 +66,5 @@ function editLabel(id) {
     window.location.href = `/label/edit/${id}`;
     //implementar rota edit 
 }
+
 </script>
