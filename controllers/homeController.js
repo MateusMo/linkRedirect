@@ -3,8 +3,9 @@ const { Label, Destination } = require("../models");
 
 const get = async (req, res) => {
 
+    console.log(req.session.user)
     if (!req.session.user) {
-        return res.redirect('/login');
+        return res.redirect('/');
     }
 
     try {
@@ -12,7 +13,7 @@ const get = async (req, res) => {
             include: [{ model: Destination }],
         }).then(results => results.map(result => result.get({ plain: true })));
 
-        res.render('home', { user: req.session.user, labels });
+        res.render('/home', { user: req.session.user, labels });
     } catch (error) {
         console.error("Erro ao buscar Labels e Destinations", error);
         res.status(500).send("Ocorreu um erro ao buscar as informações");
