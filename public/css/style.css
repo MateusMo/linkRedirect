@@ -14,7 +14,7 @@
     padding: 0;
 }
 
-input {
+input,select,option {
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -26,6 +26,22 @@ input {
     color: var(--basic-background);
     border: none;
     font-size: 20px;
+}
+
+select {
+    width: calc(100% + 1rem);
+    appearance: none; /* Remove o estilo padrão do navegador */
+    -webkit-appearance: none; /* Para compatibilidade com navegadores baseados em WebKit */
+    -moz-appearance: none; /* Para compatibilidade com navegadores baseados em Gecko (Firefox) */
+    padding-right: 2rem; /* Ajusta o espaçamento para o ícone */
+    background-image: url('sua-imagem-aqui'); /* Adiciona um ícone personalizado */
+    background-position: right center; /* Posiciona o ícone à direita */
+    background-repeat: no-repeat; /* Não repete o ícone */
+}
+
+/* Para ajustar o ícone ao dropdown */
+select::-ms-expand {
+    display: none;
 }
 
 input:hover {
@@ -137,6 +153,13 @@ img{
 
 .basic__message_error {
     color: var(--basic-error);
+}
+
+.basic__profile_image{
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
 }
 
 /* Contexto home */

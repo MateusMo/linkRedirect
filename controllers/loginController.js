@@ -19,7 +19,6 @@ const post = async (req, res) => {
             return res.status(401).render('login', { errorMessage: 'Usuário não encontrado' });
         }
     } catch (error) {
-        console.error(error);
         return res.status(500).json({ error: 'Erro interno do servidor' });
     }
 }
