@@ -1,18 +1,29 @@
 <div class="basic__container principal__font">
     <div class="basic__element_big">
         <div class="left">
+            <img src={{user.profilePicture}} id="perfilImg" class="basic__profile_image" alt="Imagem de Perfil">
+            <br>
             Welcome: {{user.nickName}}
             <br>
             <br>
             Desenvolver perfil
+            (criar card)
+            Criar dicas de como usar a ferramenta e exibir dinamicamente nos
+            perfis dos usuários
             <br>
+            ex: use para compartilhar links de redes sociais
             <br>
-            <button onclick="redirecionarPagina('/logout')" class="table__button">Desconectar</button>
+            ex: use para reduzir um link grande
+            <br>
+            ex: use para criar um link mais chamativo para a sua campanha de publicidade
+            <br>
+            <button onclick="redirecionarPagina('/logout')" class="table__button principal__font">Desconectar</button>
         </div>
         <br>
         <br>
         <div class="right">
-            <button onclick="redirecionarPagina('/home/label')" class="table__button">Registrar novo Link</button>
+            <button onclick="redirecionarPagina('/home/label')" class="table__button principal__font">Registrar novo
+                Link</button>
             <br>
             <br>
             {{#if labels}}

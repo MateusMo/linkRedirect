@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        profilePicture: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         createdAt: {
             allowNull: false,
             type: DataTypes.DATE,
@@ -31,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.associate = (models) => {
-        User.hasMany(models.Label, { foreignKey: 'userId'});
+        User.hasMany(models.Label, { foreignKey: 'userId' });
     };
 
     return User;
