@@ -18,18 +18,15 @@ app.engine('hbs', handlebars.engine({
     extname: 'hbs',
     defaultLayout: 'main',
 }));
-
 //criar secretKey no servidor
 const secretKey = '12345';
 app.use(session({
     secret: secretKey, // Chave secreta para assinar a sessão
     resave: false,
     saveUninitialized: true
-  }));
-
-  //Configuração bodyParser
+}));
+//Configuração bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
-
 //Configuração css publico
 app.use(express.static('public'));
 
@@ -38,14 +35,18 @@ app.use(sqlDetector);
 app.use(ddosDetector);
 
 //rotas
+
+app.get('/', (req, res) => {
+    res.redirect('/login');
+});
+app.use('/login', loginRouter);
 app.use('/home', homeRouter)
 app.use('/registro', registerRouter);
-app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 
 //rota 404 padrão
 app.use((req, res, next) => {
-    res.render('error',{user: req.session, message:'Página não encontrada', status:'404'});
+    res.render('error', { user: req.session, message: 'Página não encontrada', status: '404' });
 });
 
 app.listen(port, () => {

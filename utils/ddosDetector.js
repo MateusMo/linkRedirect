@@ -1,7 +1,6 @@
 const rateLimit = require('express-rate-limit');
 const fs = require('fs');
 const path = require('path');
-const Handlebars = require('handlebars');
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutos
