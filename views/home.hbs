@@ -7,12 +7,12 @@
             Desenvolver perfil
             <br>
             <br>
-            <a href="/logout" class="table__button">Desconectar</a>
+            <button onclick="redirecionarPagina('/logout')" class="table__button">Desconectar</button>
         </div>
         <br>
         <br>
         <div class="right">
-            <a href="/home/label" class="table__button">Registrar novo Link</a>
+            <button onclick="redirecionarPagina('/home/label')" class="table__button">Registrar novo Link</button>
             <br>
             <br>
             {{#if labels}}
@@ -67,6 +67,11 @@
     function editLabel(id) {
         window.location.href = `/label/edit/${id}`;
         //implementar rota edit 
+    }
+
+    function redirecionarPagina(rote) {
+        console.log(rote)
+        window.location.href = rote;
     }
 
 </script>
