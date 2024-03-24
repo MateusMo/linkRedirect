@@ -5,8 +5,9 @@ const logoutRouter = require('./routes/logoutrouter');
 const homeRouter = require('./routes/homeRouter');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-const path = require('path');
+const sqlDetector = require('./utils/sqlDetector');
 const session = require('express-session');
+const ddosDetector = require('./utils/ddosDetector');
 const app = express();
 const port = 3000;
 
@@ -18,13 +19,7 @@ app.engine('hbs', handlebars.engine({
     defaultLayout: 'main',
 }));
 
-//Configuração de sessão
-//isso salva o usuário logado na sessão
-//e distribui ele pelo sistema quando precisar
-//exemplo de como salvar usuário e recuperar em
-//login controller POST
-//essa chave secreta deve ser variável de ambiente
-//no servidor
+//criar secretKey no servidor
 const secretKey = '12345';
 app.use(session({
     secret: secretKey, // Chave secreta para assinar a sessão
@@ -38,6 +33,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Configuração css publico
 app.use(express.static('public'));
 
+//Verificação de ataques
+app.use(sqlDetector);
+app.use(ddosDetector);
+
 //rotas
 app.use('/home', homeRouter)
 app.use('/registro', registerRouter);
@@ -46,7 +45,7 @@ app.use('/logout', logoutRouter);
 
 //rota 404 padrão
 app.use((req, res, next) => {
-    res.render('404',{user: req.session});
+    res.render('error',{user: req.session, message:'Página não encontrada', status:'404'});
 });
 
 app.listen(port, () => {
