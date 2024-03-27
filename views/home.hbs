@@ -14,8 +14,11 @@
         <br>
         <br>
         <div class="right">
-            <button onclick="redirecionarPagina('/home/label')" class="table__button principal__font">Registrar novo
-                Link</button>
+            <div class="basic__theme_div">
+                <button onclick="redirecionarPagina('/home/label')" class="table__button principal__font">Registrar novo
+                    Link</button>
+                <input class="basic__theme_selector" type="range" type="range" min="1" max="8" value="1" step="1">
+            </div>
             <br>
             <br>
             {{#if labels}}
@@ -77,4 +80,98 @@
         window.location.href = rote;
     }
 
+    //Salva tema
+    document.addEventListener('DOMContentLoaded', function () {
+        const themeSelector = document.querySelector('.basic__theme_selector');
+        const root = document.documentElement;
+        const themes = {
+            1: {
+                '--basic-background': '#070F2B',
+                '--basic-element': '#1B1A55',
+                '--basic-decoration': '#535C91',
+                '--basic-text': '#9290C3'
+            },
+            2: {
+                '--basic-background': '#4C5F7A',
+                '--basic-element': '#393E6F',
+                '--basic-decoration': '#3D2E4F',
+                '--basic-text': '#321D2F'
+            },
+            3: {
+                '--basic-background': '#0F0F0F',
+                '--basic-element': '#232D3F',
+                '--basic-decoration': '#005B41',
+                '--basic-text': '#008170'
+            },
+            4: {
+                '--basic-background': '#0A2647',
+                '--basic-element': '#144272',
+                '--basic-decoration': '#205295',
+                '--basic-text': '#2C74B3'
+            },
+            5: {
+                '--basic-background': '#404258',
+                '--basic-element': '#474E68',
+                '--basic-decoration': '#50577A',
+                '--basic-text': '#6B728E'
+            },
+            6: {
+                '--basic-background': '#2C3333',
+                '--basic-element': '#395B64',
+                '--basic-decoration': '#A5C9CA',
+                '--basic-text': '#E7F6F2'
+            },
+            7: {
+                '--basic-background': '#2E0249',
+                '--basic-element': '#570A57',
+                '--basic-decoration': '#A91079',
+                '--basic-text': '#F806CC'
+            },
+            8: {
+                '--basic-background': '#80BCBD',
+                '--basic-element': '#AAD9BB',
+                '--basic-decoration': '#D5F0C1',
+                '--basic-text': '#F9F7C9'
+            }
+        };
+
+        function applyTheme(theme) {
+            for (const style in theme) {
+                root.style.setProperty(style, theme[style]);
+            }
+            localStorage.setItem('selectedTheme', JSON.stringify(theme));
+        }
+
+        function loadSavedTheme() {
+            const savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                applyTheme(JSON.parse(savedTheme));
+            }
+        }
+
+        themeSelector.addEventListener('input', function () {
+            const value = parseInt(themeSelector.value);
+            const selectedTheme = themes[value];
+            if (selectedTheme) {
+                applyTheme(selectedTheme);
+            }
+        });
+    });
+
+    //Carrega tema
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            const theme = JSON.parse(savedTheme);
+            applyTheme(theme);
+        }
+    });
+
+    function applyTheme(theme) {
+        for (const style in theme) {
+            document.documentElement.style.setProperty(style, theme[style]);
+        }
+    }
+
 </script>
+

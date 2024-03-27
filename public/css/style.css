@@ -162,6 +162,19 @@ img{
     object-fit: cover; 
 }
 
+.basic__theme_div{
+    display: flex;
+    justify-content:start;
+    align-items: center;
+}
+.basic__theme_div > button{
+    margin-right: 1rem;
+}
+
+.basic__theme_selector{
+    width: 10%!important;
+}
+
 /* Contexto home */
 .left {
     width: 20%;
