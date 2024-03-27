@@ -9,3 +9,19 @@
         {{/if}}
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedTheme = localStorage.getItem('selectedTheme');
+        if (savedTheme) {
+            const theme = JSON.parse(savedTheme);
+            applyTheme(theme);
+        }
+    });
+
+    function applyTheme(theme) {
+        for (const style in theme) {
+            document.documentElement.style.setProperty(style, theme[style]);
+        }
+    }
+</script>

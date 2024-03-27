@@ -14,9 +14,7 @@ const get = async (req, res) => {
             where: { userId: user.id },
             include: [{ model: Destination }],
         }).then(results => results.map(result => result.get({ plain: true })));
-        const numeroAleatorio = Math.floor(Math.random() * 20) + 1;
-        const tip = tips[numeroAleatorio];
-        res.render('home', { user, labels, tip });
+        res.render('home', { user, labels, tip: tips[Math.floor(Math.random() * 50) + 1]});
     } catch (error) {
         res.status(500).send("Ocorreu um erro ao buscar as informações");
     }
